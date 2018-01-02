@@ -2,85 +2,73 @@
 <odoo>
 	<data>
 		<record id="view_donor_details" model="ir.ui.view">
-			<field name="name">view.donor.details</field>
-			<field name="model">donor.details</field>
-		<!-- 	<field name="inherit_id" ref="base.view_partner_form"/>  -->
-	<!-- 		<field name="model">res.partner</field> -->
-			<!-- <field name="inherit_id" ref="base.view_partner_form"/> -->
-			<field name="arch" type="xml">
-				<!-- <xpath expr="//field[@name='usertype']" position="replace">
-                </xpath> -->
-				<form string="Become a donor">
-					<sheet>
-						<group>
+				<field name="name">view.donor.details</field>
+				<field name="model">donor.details</field>
+				<field name="arch" type="xml">
+					<form>
+						<sheet>
 							<group>
-							<!-- 	<field name="book_id"/> -->
-								<field name='usertype'/>
-								<field name="name"/>
-								<field name="date_of_birth"/>
-								<field name="blood_group"/>
-								<field name="address"/>
-								<field name="contact_no"/>
-
+								<group>
+									<field name="full_name"/>
+									<field name="mobile"/>
+								</group>
+								<group>
+									<field name="email_id"/>
+									<field name="date_of_birth"/>
+								</group>
 							</group>
 							<group>
-								<field name="gender" widget="radio"/>
-								<field name="email_id" widget="email"/>
-						<!-- 		<field name="usertype" attrs="{ 'invisible': [('usertype','=','client')]}"/> -->
-	<!-- <field name="publisher"/>
-								<field name="price"/>
-								<field name="copies"/>
-								<field name="date -->
+								<group>
+									<field name="gender"/>
+									<field name="blood_group_id"/>
+								</group>
+								<group>
+									<field name="address"/>
+									<field name="message"/>
+									<field name="city"/>
+								</group>
 							</group>
-						</group>
-					</sheet>
-				</form>
-			</field>
-		</record>
+						
+						</sheet>
+					</form>
+				</field>
+			</record>
 
 		 <record id="tree_donor_details" model="ir.ui.view">
 			<field name="name">tree.donor.details</field>
 			<field name="model">donor.details</field>
 			<field name="arch" type="xml">
 				<tree string="Display Donor details">
-					<field name="name"/>
-					<field name="date_of_birth"/>
-					<field name="blood_group"/>
+					<field name="full_name"/>
 					<field name="address"/>
-					<field name="contact_no"/>
+					<field name="email_id"/>
+					<field name="date_of_birth"/>
 					<field name="gender"/>
-					<field name="email_id" />
+					<field name="blood_group_id"/>
+					<field name="mobile"/>
+					<field name="message"/>
+					<field name="city"/>
+
 				</tree>
 			</field>
 		</record> 
 
-		<record id="become__donor" model="ir.actions.act_window">
+		<record id="action_become_donor" model="ir.actions.act_window">
 			<field name="name">Become A Donor</field>
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">donor.details</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="view_donor_details"/>
 		</record>
 
 
-		<!-- <menuitem id="menu_book" name="Library" sequence="1"/>
-		<menuitem id="menu_book_menu" name="Book" sequence="1" parent="menu_book"/>
-		<menuitem id="menu_book_view" name="Book Details" sequence="1" action="action_book" parent="menu_book_menu"/> -->
-
-		<menuitem id="menu_home" name="Blood donor and group management" sequence="1"/>
-		<menuitem id="client_side" name="Client Side" sequence="2" parent="menu_home"/>
-			<menuitem id="menu_donor_1" name="Donor related query" sequence="3" parent="client_side"/>
-				<menuitem id="become_donor" name="Become a donor" sequence="4" action="become__donor" parent="menu_donor_1"/>
-				<menuitem id="donor_details" name="Display all donor" sequence="5" action="become__donor" parent="menu_donor_1"/>
+			<menuitem id="menu_home" name="Blood donor and group management" sequence="1"/>
+		
+			<menuitem id="client" name="Client__" sequence="2" parent="menu_home"/>
+				<menuitem id="become_donor" name="Become a donor" sequence="3" action="action_become_donor" parent="client"/>
+				
 			
-			<menuitem id="menu_blood_3" name="Contact Us" sequence="8" action="become__donor" parent="client_side"/>
-				<menuitem id="make_a_query" name="Make a Query" sequence="9" action="become__donor" parent="menu_blood_3"/>
-				<menuitem id="contact_us_info" name="Contact Us Info" sequence="10" action="become__donor" parent="menu_blood_3"/>
-		<menuitem id="admin" name="LOG IN to ADMIN" sequence="11"  action="become__donor" parent="menu_home" />
-				<menuitem id="manage_donors" name="Manage Donors" sequence="12" action="become__donor" parent="admin"/>
-				<menuitem id="manage_blood_group" name="Manage Blood Groups" sequence="13" action="become__donor" parent="admin"/>
-				<menuitem id="update_contact_us_info" name="Update Contact Us" sequence="14" action="become__donor" parent="admin"/>
-				<menuitem id="manage_contact_us_query" name="Manage Client Query" sequence="15" action="become__donor" parent="admin"/>
-
+			
 	</data>
 </odoo>

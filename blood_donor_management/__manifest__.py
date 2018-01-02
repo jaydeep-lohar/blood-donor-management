@@ -6,12 +6,13 @@
     'description': """
 This is description for blood donor & group management system.
     """,
+    'depends':['sale_management'],
     'data': [
-        # 'views/donor_details_view.xml',
-        # 'views/donor_details.xml'
+        'views/admin.xml',
+        'views/camp_registration.xml',
         'views/donor_details_view.xml',
-        'views/blood_group_details.xml'
-        # 'views/student_details_view.xml'
+        'views/make_a_query.xml',
+        'views/search_donor.xml'
     ],
     'demo': [
     ],
