@@ -5,14 +5,14 @@
 
 		<record id="view_make_a_query" model="ir.ui.view">
 			<field name="name">view.make.a.query</field>
-			<field name="model">user.query</field>
+			<field name="model">donor.query</field>
 			<field name="arch" type="xml">
 				<form string="Make a query">
 					<sheet>
 						<group>
 							<group>
 								<field name="name" required='1'/>
-								<field name="contact_no"/>
+								<field name="contact_no" required='1'/>
 								<field name="email_id" required='1'/>
 								<field name="message" required='1'/>
 							</group>
@@ -24,19 +24,18 @@
 
 
 
-		<record id="action_make_a_query" model="ir.actions.act_window">
-			<field name="name">All User Queries</field>
+		<record id="action_donor_query" model="ir.actions.act_window">
+			<field name="name">Donor Queries</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">user.query</field>
-			<field name="view_type">form</field>
+			<field name="res_model">donor.query</field>
+			<!-- <field name="view_type">form</field> -->
 			<field name="view_mode">tree,form</field>
-			<field name="view_id" ref="view_make_a_query"/>
 		</record>
 
 
 
 
-	<menuitem id="make_a_query" name="Make a Query" sequence="5"  action="action_make_a_query" parent="client"/>
+	<menuitem id="donor_query" name="Donor Query" sequence="5" action="action_donor_query" parent="home"/>
 
 	</data>
 </odoo>

@@ -4,6 +4,7 @@ class Blood_group_details(models.Model):
 	_name = "blood.group.details"
 	_description = "Blood Group Details"
 
+	
 	name = fields.Selection(
 		[
 			('O+', 'O+'), 

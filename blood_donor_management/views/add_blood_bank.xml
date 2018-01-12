@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="form_view_blood_bank_details" model="ir.ui.view">
+			<field name="name">Form view of blood bank details</field>
+			<field name="model">blood.bank.details</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+						<group>
+							<field name="type1" required='1'/>
+							<field name="name" required='1'/>
+							<field name="contact_person" required='1'/>
+							<field name="contact_no" required='1'/>
+							<field name="email_id" required='1'/>
+						</group>
+						<group>
+							<field name="address" required='1'/>
+							<field name="state" required='1'/>
+							<field name="city" required='1'/>
+						</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+			
+		<record id="tree_view_blood_bank_details" model="ir.ui.view">
+			<field name="name">Tree view of blood bank details</field>
+			<field name="model">blood.bank.details</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="type1"/>
+					<field name="name"/>
+					<field name="contact_person"/>
+					<field name="contact_no"/>
+					<field name="email_id"/>
+					<field name="address"/>
+					<field name="state"/>
+					<field name="city" />
+				</tree>
+			</field>
+		</record>
+
+
+
+
+		<record id="action_add_blood_bank" model="ir.actions.act_window">
+			<field name="name">Action for blood bank details</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">blood.bank.details</field>
+			<field name="view_mode">tree,form</field>
+			
+		</record>
+		
+		
+			<menuitem id="add_blood_bank" name="Add Blood Bank" sequence="3" action="action_add_blood_bank" parent="home"/>
+	</data>
+</odoo>

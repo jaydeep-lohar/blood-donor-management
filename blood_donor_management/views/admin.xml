@@ -1,148 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<data>
-
-		<record id="view_add_district_form" model="ir.ui.view">
-			<field name="name">view.add.district</field>
-			<field name="model">district</field>
+		<record id="tree_view_donor_details" model="ir.ui.view">
+			<field name="name">List of all donors pending to be verified</field>
+			<field name="model">donor.details</field>
 			<field name="arch" type="xml">
-				<form string="Add District">
-					<sheet>
-						<group>
-							<group>
-								<field name="name" required='1'/>
-							</group>
-						</group>
-					</sheet>
-				</form>
+				<tree>
+					<field name="full_name"/>
+					<field name="blood_group"/>
+					<field name="previous_donation_date"/>
+					<field name="gender"/>
+					<field name="weight"/>
+					<field name="hemoglobin"/>
+					<field name="pulse_rate"/>
+					<field name="blood_pressure"/>
+					<field name="temperature"/>
+					<field name="mobile"/>
+					<field name="address"/>
+					
+					<field name="status"/>
+				</tree>
 			</field>
 		</record>
 
-		<record id="tree_view_add_district" model="ir.ui.view">
-			<field name="name">tree.view.add.district</field>
-			<field name="model">district</field>
+		<record id="tree_view_manage_donor_query" model="ir.ui.view">
+			<field name="name">All donor queries are as below:</field>
+			<field name="model">donor.query</field>
 			<field name="arch" type="xml">
-				<tree string="Add District">
-					<field name="name"/>
-				</tree>
-			</field>
-		</record> 
-
-		<record id="view_add_blood_bank_form" model="ir.ui.view">
-			<field name="name">view.add.blood.bank</field>
-			<field name="model">blood_bank</field>
-			<field name="arch" type="xml">
-				<form string="Add Blood Bank">
-					<sheet>
-						<group>
-							<group>
-								<field name="name" required='1'/>
-								<field name="district_id"/>
-							</group>
-						</group>
-					</sheet>
-				</form>
-			</field>
-		</record>
-
-
-		<record id="tree_view_add_blood_bank" model="ir.ui.view">
-			<field name="name">tree.view.add.blood.bank</field>
-			<field name="model">blood_bank</field>
-			<field name="arch" type="xml">
-				<tree string="Add Blood Bank">
-					<field name="name"/> 
-					<field name="district_id"/>
-				</tree>
-			</field>
-		</record> 
-
-	<record id="view_add_organization_form" model="ir.ui.view">
-			<field name="name">view.add.organization.form</field>
-			<field name="model">organization</field>
-			<field name="arch" type="xml">
-				<form string="Add Organization">
-					<sheet>
-						<group>
-							<group>
-								<field name="name" required='1'/>
-								<field name="district_id" required='1'/>
-							</group>
-						</group>
-					</sheet>
-				</form>
-			</field>
-		</record>
-
-
-		<record id="tree_view_add_organization" model="ir.ui.view">
-			<field name="name">tree.view.add.organization</field>
-			<field name="model">organization</field>
-			<field name="arch" type="xml">
-				<tree string="Listed Organization">
-					<field name="name"/>
-					<field name="district_id"/>
-				</tree>
-			</field>
-		</record> 
-
-		<record id="tree_manage_query" model="ir.ui.view">
-			<field name="name">tree.manage.query</field>
-			<field name="model">user.query</field>
-			<field name="arch" type="xml">
-				<tree string="Listed Organization">
+				<tree>
 					<field name="name"/>
 					<field name="contact_no"/>
 					<field name="email_id"/>
 					<field name="message"/>
 				</tree>
 			</field>
-		</record> 
-
-
-
-		<record id="action_add_district" model="ir.actions.act_window">
-			<field name="name">Add a district</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">district</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
-			<field name="view_id" ref="tree_view_add_district"/>
-		</record>
-
-			<record id="action_add_blood_bank" model="ir.actions.act_window">
-			<field name="name">Add a blood bank</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">blood_bank</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
-			<field name="view_id" ref="tree_view_add_blood_bank"/>
-		</record>
-
-		<record id="action_add_organization" model="ir.actions.act_window">
-			<field name="name">Add a organization</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">organization</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
-			<field name="view_id" ref="tree_view_add_organization"/>
-		</record>
-
-		<record id="action_manage_query" model="ir.actions.act_window">
-			<field name="name">Manage User Queries</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">user.query</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
-			<field name="view_id" ref="tree_manage_query"/>
 		</record>
 
 
+		<record id="action_verify_donor" model="ir.actions.act_window">
+			<field name="name">Verify donor</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">donor.details</field>
+			<field name="view_mode">tree</field>
+			<field name="ref_view_id" ref="tree_view_donor_details"></field>
+		</record>
 
-		<menuitem id="admin" name="LOG IN to ADMIN" sequence="13"   parent="menu_home" />
-				<menuitem id="add_district" name="Add District" sequence="14" action="action_add_district" parent="admin"/>
-				<menuitem id="add_blood_bank" name="Add Blood Bank" sequence="15" action="action_add_blood_bank" parent="admin"/>
-				<menuitem id="add_organization" name="Add Organization" sequence="16" action="action_add_organization" parent="admin"/>
-				<menuitem id="manage_query" name="Manage Query" sequence="17" action="action_manage_query" parent="admin"/>
+		<record id="action_manage_donor_query" model="ir.actions.act_window">
+			<field name="name">Manage donor query</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">donor.query</field>
+			<field name="view_mode">tree</field>
+			<field name="ref_view_id" ref="tree_view_manage_donor_query"></field>
+		</record>
+
+		<record id="action_update_donor_status" model="ir.actions.act_window">
+			<field name="name">Update donor status</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">donor.details</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="admin" name="Admin" sequence="6"  parent="home"/>
+			<menuitem id="verify_donor" name="Verify Donor" sequence="7" action="action_verify_donor" parent="admin"/>
+			<menuitem id="manage_donor_query" name="Manage Donor Query" sequence="8" action="action_manage_donor_query" parent="admin"/>
+			<menuitem id="update_donor_status" name="Update Donor Status" sequence="9" action="action_update_donor_status" parent="admin"/>
 	</data>
 </odoo>
