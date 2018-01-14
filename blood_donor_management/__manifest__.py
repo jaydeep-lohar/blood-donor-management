@@ -7,7 +7,9 @@
 	# 'depends': ['base'],
 	'data': [
 	'views/home_registration.xml',
-	'views/admin_view.xml'
+	'views/admin_view.xml',
+	'wizard/update_donor_status.xml',
+	'wizard/update_query_status.xml'
 	],
 	'demo': [ ],
 	'qweb': [ ],

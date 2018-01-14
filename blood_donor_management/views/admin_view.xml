@@ -45,7 +45,7 @@
 			<field name="model">res.partner</field>
 			<field name="arch" type="xml">
 				<tree>
-					<field name="donor_query_status"/>
+					<field name="query_status"/>
 					<field name="name"/>
 					<field name="message"/>
 					<field name="mobile"/>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_update_query_status" model="ir.ui.view">
+            <field name="name">Update query status</field>
+            <field name="model">update.query.status</field>
+            <field name="arch" type="xml">
+                <form string="Update query status" version="7.0">
+                    <h2>Are you sure want to update query status?</h2>
+                    <group>
+                        <field name="query_status"/>
+                    </group>
+                    <footer>
+                        <span groups="base.group_user">
+                            <button string="Yes" type="object"
+                                    name="update_query_status" class="oe_highlight"/>
+                                or
+                            <button special="cancel" string="No" type="object"/>
+                        </span>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <act_window id="action_update_query_status" multi="True"
+                    name="Action_update_query_status" res_model="update.query.status" src_model="res.partner"
+                    view_mode="form" target="new" view_type="form"/>
+    </data>
+</odoo>

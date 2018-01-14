@@ -144,7 +144,7 @@ class ResPartner(models.Model):
 	############ contact_no = mobile//res.partner field
 	############ email_id = email // res.partner field
 	message = fields.Text(string='Message: ')
-	donor_query_status=fields.Boolean(string='Donor Query status')
+	query_status=fields.Boolean(string='User Query status',default=False)
 
 
 
