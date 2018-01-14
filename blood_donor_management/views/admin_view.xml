@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<!-- ................Verify donor...................-->
+		<record id="tree_view_donor_details" model="ir.ui.view">
+			<field name="name">List of all available Donors</field>
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="donor_status"/>
+					<field name="name"/>
+					<field name="blood_group"/>
+					<field name="previous_donation_date"/>
+					<field name="gender"/>
+					<field name="weight"/>
+					<field name="hemoglobin"/>
+					<field name="pulse_rate"/>
+					<field name="temperature"/>
+					<field name="diastolic"/>
+					<field name="systolic"/>
+					<field name="mobile"/>
+					<field name="street"/>
+
+					<field name="city"/>
+					<field name="state_id"/>
+
+
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_verify_donor" model="ir.actions.act_window">
+			<field name="name">List of all available Donors</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.partner</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="tree_view_donor_details"/>
+			
+		</record>
+
+		<!-- ................Donor query...................-->
+		<record id="tree_view_donor_query_details" model="ir.ui.view">
+			<field name="name">List of all donor queries</field>
+			<field name="model">res.partner</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="donor_query_status"/>
+					<field name="name"/>
+					<field name="message"/>
+					<field name="mobile"/>
+					<field name="email"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_donor_query" model="ir.actions.act_window">
+			<field name="name">List of all available Donors</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.partner</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="tree_view_donor_query_details"/>
+			
+		</record>
+		<menuitem id="admin_view" name="ADMIN" sequence="3" parent="home"/>
+			<menuitem id="verify_donor" name="Verify donor" sequence="4" action="action_verify_donor" parent="admin_view"/>
+			<menuitem id="donor_query" name="Donor Query" sequence="5" action="action_donor_query" parent="admin_view"/>
+		<menuitem id="camp_admin_view" name="ADMIN at camp" sequence="6" parent="home"/>
+			<menuitem id="update_donor_status" name="Update donor Status" sequence="7" action="action_verify_donor" parent="camp_admin_view"/>
+	</data>
+</odoo>

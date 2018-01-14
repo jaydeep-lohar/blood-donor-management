@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="form_view_home_registration" model="ir.ui.view">
+			<field name="name">Home Registration for 4 types of form</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form"/>
+			<field name="arch" type="xml">
+
+				<xpath expr="//field[@name='company_type']" position="replace">
+					<field name="role" widget="radio" option="{'horizontal':true}"/>
+				</xpath>
+
+
+			<!-- ........................Become a donor view............................ -->
+				<xpath expr="//field[@name='function']" position="replace">
+					<field name="blood_group"  attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
+				</xpath>
+				<xpath expr="//label[@for='street']" position="before">
+					<field name="gender"  widget="radio" attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
+				</xpath>
+				<xpath expr="//field[@name='gender']" position="after">
+					<field name="weight"  placeholder="Female >= 50kg,Male >= 45kg" attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
+				</xpath>
+				<xpath expr="//field[@name='weight']" position="after">
+					<field name="previous_donation_date" placeholder=" >= 54_days"  attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
+				</xpath>
+				<xpath expr="//field[@name='previous_donation_date']" position="after">
+					<field name="pulse_rate" placeholder="60 &lt;= x &lt;= 110 "  attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
+				</xpath>
+				<xpath expr="//field[@name='pulse_rate']" position="after">
+					<field name="hemoglobin" placeholder=" >= 12.5 gm"  attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
+				</xpath>
+				<xpath expr="//field[@name='vat']" position="replace">
+								
+				</xpath>
+				<xpath expr="//field[@name='category_id']" position="replace">
+								
+				</xpath>
+				
+				<xpath expr="//field[@name='phone']" position="before">
+					<field name="systolic" placeholder=" &lt;= 180 mm "  attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
+				</xpath>
+				<xpath expr="//field[@name='systolic']" position="after">
+					<field name="diastolic" placeholder=" &lt;=  100 mm"  attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
+				</xpath>
+				<xpath expr="//field[@name='diastolic']" position="after">
+					<field name="temperature" placeholder=" &lt;= 37.5 Celsius" attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
+				</xpath>
+				<xpath expr="//field[@name='title']" position="replace">
+								
+				</xpath>
+				<xpath expr="//label[@for='street']" position="before">
+					<field name="image" widget="image" attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}"/>	
+				</xpath>
+
+
+				
+
+			<!-- ................................Add blood bank view............................. -->
+				<xpath expr="//label[@for='street']" position="before">
+					<field name="type1" attrs="{'invisible':['|',('role','=','1'),'|',('role','=','3'),'|',('role','=','4')],'required':[('role','=','2')]}"/>		
+				</xpath>
+				<xpath expr="//field[@name='type1']" position="after">
+					<field name="contact_person" attrs="{'invisible':['|',('role','=','1'),'|',('role','=','4')],'required':['|',('role','=','2'),'|',('role','=','3
+						')]}"/>		
+				</xpath>
+				<xpath expr="//field[@name='website']" position="replace">
+					<field name="website"  attrs="{'invisible':['|',('role','=','1'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '2')]}" />		
+				</xpath>
+
+
+
+			<!-- ................................Add Camp Registration view............................. -->
+				<xpath expr="//label[@for='street']" position="before">
+					<field name="blood_bank_ref"  attrs="{'invisible':['|',('role','=','1'),'|',('role','=','2'),'|',('role','=','4')],'required': [('role', '=', '3')]}" />				
+				</xpath>
+				<xpath expr="//field[@name='blood_bank_ref']" position="after">
+					<field name="camp_date" attrs="{'invisible':['|',('role','=','1'),'|',('role','=','2'),'|',('role','=','4')],'required':[('role','=','3')]}"/>		
+				</xpath>
+				<xpath expr="//field[@name='camp_date']" position="after">
+					<field name="camp_time" widget="float_time" attrs="{'invisible':['|',('role','=','1'),'|',('role','=','2'),'|',('role','=','4')],'required':[('role','=','3')]}"/>		
+				</xpath>
+				<!-- Contact person is used from blood bank view -->
+				<xpath expr="//field[@name='contact_person']" position="after">
+					<field name="message" attrs="{'invisible':['|',('role','=','1'),'|',('role','=','2')],'required':[('role','=','4')]}"/>		
+				</xpath>
+
+
+			<!-- ................................Add Donor Query view............................. 
+								 Message is used from camp registration view-->
+
+
+			</field>
+		</record>
+			
+		
+
+		<record id="action_home_registration" model="ir.actions.act_window">
+			<field name="name">Home Registration for 4 types of form</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.partner</field>
+			<field name="view_mode">tree,form</field>
+			
+		</record>
+		
+		<menuitem id="home" name="Blood donor management system" sequence="1"/>
+			<menuitem id="home_registration" name="Home_registration" sequence="2" action="action_home_registration" parent="home"/>
+	</data>
+</odoo>
