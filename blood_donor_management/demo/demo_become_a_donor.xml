@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+    	<record id="donor_dhwani_mehta" model="res.partner">
+            <field name="role">1</field>
+            <field name="name">Dhwani Mehta</field>
+            <field name="blood_group">O+</field>
+            <field name="previous_donation_date">2017-9-28</field>
+            <field name="hemoglobin">17</field>
+            <field name="pulse_rate">90</field>
+            <field name="temperature">30</field>
+            <field name="gender">2</field>
+            <field name="weight">65</field>
+            <field name="diastolic">85</field>
+            <field name="systolic">170</field>
+            <field name="donor_status">True</field>
+            <field name="street">Home no:-206</field>
+            <field name="street2">New C.G Road</field>
+            <field name="city">Ahmedabad</field>
+
+		</record>
+	</data>
+</odoo>

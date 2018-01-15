@@ -10,7 +10,7 @@ class ResPartner(models.Model):
 	_inherit = 'res.partner'
 	_description="Home_Registration"
 
-	role=fields.Selection([('1','Become a donor'),('2','Add blood bank'),('3','Camp Registration'),('4','Donor Query')],default='1')
+	role=fields.Selection([('1','Become a donor'),('2','Add blood bank'),('3','Camp Registration'),('4','User Query')],default='1')
 
 	############-----------------------------------------------Donor-details & validation
 	############full_name=name // field_name in res.partner

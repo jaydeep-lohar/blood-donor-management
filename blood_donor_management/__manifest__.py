@@ -16,7 +16,12 @@
 	'report/report_donor_detail.xml',
 	# 'report/wizard_report_camp_detail.xml'
 	],
-	'demo': [ ],
+	'demo': [
+	'demo/demo_become_a_donor.xml',
+	'demo/demo_add_blood_bank.xml',
+	'demo/demo_camp_registration.xml',
+	'demo/demo_user_query.xml'
+	 ],
 	'qweb': [ ],
 	'installable': True,
 	'auto_install': False,
