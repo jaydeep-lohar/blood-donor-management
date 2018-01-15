@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="module_blood_donor_category" model="ir.module.category">
+                <field name="name">Blood donor management</field>
+        </record>
+        <record id="blood_donor_group_admin" model="res.groups">
+                <field name="name">Admin</field>
+                <field name="category_id" ref="module_blood_donor_category"/>
+        </record>
+        <record id="blood_donor_group_donor" model="res.groups">
+                <field name="name">Donor</field>
+                <field name="category_id" ref="module_blood_donor_category"/>
+        </record>
+        <record id="blood_donor_group_camp_admin" model="res.groups">
+                <field name="name">Camp Admin</field>
+                <field name="category_id" ref="module_blood_donor_category"/>
+        </record>
+    </data>
+</odoo>

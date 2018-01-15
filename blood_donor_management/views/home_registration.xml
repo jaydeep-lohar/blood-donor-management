@@ -20,7 +20,7 @@
 					<field name="gender"  widget="radio" attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
 				</xpath>
 				<xpath expr="//field[@name='gender']" position="after">
-					<field name="weight"  placeholder="Female >= 50kg,Male >= 45kg" attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
+					<field name="weight" placeholder="Female >= 50kg,Male >= 45kg" attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
 				</xpath>
 				<xpath expr="//field[@name='weight']" position="after">
 					<field name="previous_donation_date" placeholder=" >= 54_days"  attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
