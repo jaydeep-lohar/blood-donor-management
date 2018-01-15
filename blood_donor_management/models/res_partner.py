@@ -30,7 +30,7 @@ class ResPartner(models.Model):
 	temperature=fields.Char(string='Temperature')
 	############mobile=fields.Char(string='Contact No:-')
 	############address=fields.Text()
-	gender=fields.Selection([('1','Male'),('2','Female')])
+	gender=fields.Selection([('Male','Male'),('Female','Female')])
 	weight=fields.Char(string="Weight")
 	diastolic=fields.Char(string='Blood Pressure(diastolic)')
 	systolic=fields.Char(string='Blood Pressure(systolic)')

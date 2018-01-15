@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      <record id="view_camp_details" model="ir.ui.view">
+            <field name="name">Camp details according to date</field>
+            <field name="model">camp.details</field>
+            <field name="arch" type="xml">
+            <form string="Camp Details">
+                <group>
+                    <field name="date_from" />
+                    <field name="date_to"/>
+                </group>
+                <footer>
+                    <button name="print_report" string="Print" type="object" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-default"/>
+                </footer>
+            </form>
+            </field>
+        </record>
+
+     <record id="action_camp_details_report" model="ir.actions.act_window">
+        <field name="name">Camp Report sorted by date</field>
+        <field name="res_model">camp.details</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_camp_details"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_student_details_report" name="Print Student" sequence="99" action="action_student_details_report" parent="menu_book"/>
+
+</odoo>

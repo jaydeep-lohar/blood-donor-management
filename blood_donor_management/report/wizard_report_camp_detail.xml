@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="wizard_report_campdetail">
+    <t  t-call="web.html_container">
+        <t  t-call="web.internal_layout">
+             <div class="page">
+                 <h1 class="text-center" style="color:blue;">Camp Details</h1>
+                   <table class="table table-bordered mb32" style="table-layout:auto" width='100%'>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Blood Bank</th>
+                            <th>Camp date</th>
+                            <th>Camp time</th>
+                            <th>Street</th>
+                            <th>City</th>
+                            <th>Contact person name</th>
+                            <th>Contact No</th>
+                        </tr>
+
+                        <t t-foreach="docs" t-as="doc">
+                            <tr>
+                               <td><t t-raw="doc.name"/></td>
+                               <td><t t-raw="doc.blood_bank_ref"/></td>
+                               <td><t t-raw="doc.camp_date"/></td>
+                               <td><t t-raw="doc.camp_time"/></td>
+                               <td><t t-raw="doc.street2"/></td>
+                               <td><t t-raw="doc.city"/></td>
+                               <td><t t-raw="doc.person_name"/></td>
+                               <td><t t-raw="doc.mobile"/></td>
+                            </tr>
+                        </t>
+                    </thead>
+                   </table>
+             </div>
+        </t>
+    </t>
+</template>
+</odoo>

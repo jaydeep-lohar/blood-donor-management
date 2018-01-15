@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_donor_detail">
+    <t t-call="web.external_layout">
+        <!-- <t t-set="doc" t-value="doc.with_context({})" />  -->
+        <div class="page">
+            <div class="oe_structure"/>
+            <div class="row">
+                <table width="100%">
+                    <tr>
+                        <td class="text-center"><b> Donor Details</b></td>
+                    </tr>
+                </table>
+                <table width="100%">
+                    <tr>
+                        <td class="text-center">Name</td>
+                        <td class="text-center">Blood Group</td>
+                        <td class="text-center">Previous donation date</td>
+                        <td class="text-center">Gender</td>
+                        <td class="text-center">Donor Status</td>
+                        <td class="text-center">Contact no</td>
+                        <td class="text-center">Street</td>
+                        <td class="text-center">City</td>
+                    </tr>
+                    <t t-foreach="docs" t-as="doc1">
+                        <tr>
+                            <td class="text-center"><t t-esc="doc1.name"/></td>
+                            <td class="text-center"><t t-esc="doc1.blood_group"/></td>
+                            <td class="text-center"><t t-esc="doc1.previous_donation_date"/></td>
+                            <td class="text-center"><t t-esc="doc1.gender"/></td>
+                            <td class="text-center"><t t-esc="doc1.donor_status"/></td>
+                            <td class="text-center"><t t-esc="doc1.mobile"/></td>
+                            <td class="text-center"><t t-esc="doc1.street2"/></td>
+                            <td class="text-center"><t t-esc="doc1.city"/></td>
+                        </tr>
+                    </t>
+                </table>
+
+            </div>
+        </div>
+    </t>
+    </template>
+</odoo>

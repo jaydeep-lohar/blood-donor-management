@@ -9,7 +9,11 @@
 	'views/home_registration.xml',
 	'views/admin_view.xml',
 	'wizard/update_donor_status.xml',
-	'wizard/update_query_status.xml'
+	'wizard/update_query_status.xml',
+	# 'wizard/report_camp_detail.xml',
+	'report/report_menu.xml',
+	'report/report_donor_detail.xml',
+	# 'report/wizard_report_camp_detail.xml'
 	],
 	'demo': [ ],
 	'qweb': [ ],
