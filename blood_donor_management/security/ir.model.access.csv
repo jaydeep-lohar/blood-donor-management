@@ -1,1 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_group_admin,access_group_admin,base.model_res_partner,blood_donor_management.blood_donor_group_admin,1,1,1,1
+access_group_donor,access_group_donor,base.model_res_partner,blood_donor_management.blood_donor_group_donor,0,0,0,0
+access_group_camp_admin,access_group_camp_admin,base.model_res_partner,blood_donor_management.blood_donor_group_camp_admin,1,0,0,0

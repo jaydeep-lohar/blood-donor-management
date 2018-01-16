@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+    	<record id="blood_bank_Sai_seva" model="res.partner">
+            <field name="role">2</field>
+            <field name="type1">independent</field>
+            <field name="name">Sai Seva</field>
+            <field name="contact_person">Prashant Yadav</field>
+            <field name="phone"> 123456789</field>
+            <field name="mobile">90</field>
+            <field name="email">Sai_Seva@gmail.com</field>
+            <field name="street">Opp Sports Complex</field>
+            <field name="street2">new C.G. Road</field>
+            <field name="website">www.Sai-Seva.com</field>
+            <field name="city">Ahmedabad</field>
+        </record>
+	</data>
+</odoo>

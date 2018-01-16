@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+    	<record id="user_query_nikhil" model="res.partner">
+            <field name="role">4</field>
+            <field name="query_status">True</field>
+            <field name="name">Nikhil</field>
+            <field name="message">Hello</field>
+            <field name="mobile">9054495887</field>
+            <field name="email">nikhil@gmail.com</field>
+        </record>
+	</data>
+</odoo>
