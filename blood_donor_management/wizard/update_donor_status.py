@@ -14,3 +14,11 @@ class Update_donor_status(models.TransientModel):
         lines = self.env['res.partner'].search([('id', 'in', active_ids)])
         for line in lines:
             line.write({'donor_status':True})
+
+
+    @api.model
+    def create(self,vals):
+        obj = super(Update_donor_status,self).create(vals)
+        template = self.env.ref('blood_donor_management.on_update_status',raise_if_not_found=False) #note here registration is template id of registration_template.xml
+        template.send_mail(obj.id)
+        return obj

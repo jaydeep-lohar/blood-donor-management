@@ -9,6 +9,7 @@
 	'security/access_security.xml',
 	'views/home_registration.xml',
 	'views/admin_view.xml',
+	'views/welcome_template.xml',
 	'wizard/update_donor_status.xml',
 	'wizard/update_query_status.xml',
 	# 'wizard/report_camp_detail.xml',
