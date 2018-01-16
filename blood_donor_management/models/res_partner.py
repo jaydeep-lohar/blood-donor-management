@@ -10,7 +10,7 @@ class ResPartner(models.Model):
 	_inherit = 'res.partner'
 	_description="Home_Registration"
 
-	role=fields.Selection([('1','Become a donor'),('2','Add blood bank'),('3','Camp Registration'),('4','Donor Query')],default='1')
+	role=fields.Selection([('1','Become a donor'),('2','Add blood bank'),('3','Camp Registration'),('4','Donor Query')])
 
 	############-----------------------------------------------Donor-details & validation
 	############full_name=name // field_name in res.partner
@@ -116,7 +116,7 @@ class ResPartner(models.Model):
 
 	
 	############-----------------------------------Blood-bank registration & validation
-	type1=fields.Selection([('independent','Independent'),('government','Government'),('hospital','Hospital')])
+	type1=fields.Selection([('independent','Independent'),('government','Government'),('hospital','Hospital')],string='Type')
 	############name
 	contact_person=fields.Char(string='Contact person ')
 	############contact_no = phone //name of field in res.partner
@@ -132,7 +132,7 @@ class ResPartner(models.Model):
 	###########camp_name=name
 	############ camp_venue=Address_label
 	camp_date=fields.Date(string='Date  ')
-	camp_time=fields.Float(string='Time (e.g; 10:00)')
+	camp_time=fields.Float(string='Time ')
 	person_name=fields.Char(string='Person Name  ')
 	############mobile
 	############email
@@ -143,8 +143,8 @@ class ResPartner(models.Model):
 	############ name
 	############ contact_no = mobile//res.partner field
 	############ email_id = email // res.partner field
-	message = fields.Text(string='Message: ')
-	query_status=fields.Boolean(string='User Query status',default=False)
+	message = fields.Text(string='Message ')
+	query_status=fields.Boolean(string='User Query status ',default=False)
 
 
 

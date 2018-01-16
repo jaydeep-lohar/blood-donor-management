@@ -7,7 +7,7 @@
             <field name="name">Sai Seva</field>
             <field name="contact_person">Prashant Yadav</field>
             <field name="phone"> 123456789</field>
-            <field name="mobile">90</field>
+            <field name="mobile">9054495887</field>
             <field name="email">Sai_Seva@gmail.com</field>
             <field name="street">Opp Sports Complex</field>
             <field name="street2">new C.G. Road</field>
@@ -15,4 +15,34 @@
             <field name="city">Ahmedabad</field>
         </record>
 	</data>
+    <data noupdate="0">
+        <record id="blood_bank_Alpha_trust" model="res.partner">
+            <field name="role">2</field>
+            <field name="type1">government</field>
+            <field name="name">Alpha trust</field>
+            <field name="contact_person">Nitin Kumar</field>
+            <field name="phone"> 123456789</field>
+            <field name="mobile">9054495887</field>
+            <field name="email">Alpha_trust@gmail.com</field>
+            <field name="street">Opp C.G Moal</field>
+            <field name="street2">new street road</field>
+            <field name="website">www.alpha-trust.com</field>
+            <field name="city">Ahmedabad</field>
+        </record>
+    </data>
+    <data noupdate="0">
+        <record id="blood_bank_Zebra_trust" model="res.partner">
+            <field name="role">2</field>
+            <field name="type1">hospital</field>
+            <field name="name">Zebra trust</field>
+            <field name="contact_person">Sachin Yadav</field>
+            <field name="phone"> 123456789</field>
+            <field name="mobile">9090544958</field>
+            <field name="email">zebra_trust@gmail.com</field>
+            <field name="street">Opp AMC Complex</field>
+            <field name="street2">new C.G. Road</field>
+            <field name="website">www.zebra-trust.com</field>
+            <field name="city">Ahmedabad</field>
+        </record>
+    </data>
 </odoo>

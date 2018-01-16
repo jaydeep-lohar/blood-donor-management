@@ -4,7 +4,7 @@
 	'version': '1',
 	'summary': 'Manage blood donor & blood bank related information',
 	'description': """This is description for blood donor & blood bank management system""",
-	# 'depends': ['base'],
+	'depends': ['base','mail'],
 	'data': [
 	'security/access_security.xml',
 	'views/home_registration.xml',

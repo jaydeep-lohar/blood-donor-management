@@ -41,15 +41,17 @@
 				<xpath expr="//field[@name='phone']" position="before">
 					<field name="systolic" groups="blood_donor_management.blood_donor_group_donor" placeholder=" &lt;= 180 mm "  attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
 				</xpath>
+
 				<xpath expr="//field[@name='systolic']" position="after">
 					<field name="diastolic" groups="blood_donor_management.blood_donor_group_donor" placeholder=" &lt;=  100 mm"  attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
 				</xpath>
+				
 				<xpath expr="//field[@name='diastolic']" position="after">
 					<field name="temperature" groups="blood_donor_management.blood_donor_group_donor" placeholder=" &lt;= 37.5 Celsius" attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}" />				
 				</xpath>
-				<xpath expr="//field[@name='title']" position="replace">
+				<!-- <xpath expr="//field[@name='title']" position="replace">
 								
-				</xpath>
+				</xpath> -->
 				<xpath expr="//label[@for='street']" position="before">
 					<field name="image" widget="image" groups="blood_donor_management.blood_donor_group_donor" attrs="{'invisible':['|',('role','=','2'),'|',('role','=','3'),'|',('role','=','4')],'required': [('role', '=', '1')]}"/>	
 				</xpath>
@@ -105,6 +107,6 @@
 		</record>
 		
 		<menuitem id="home" name="Blood donor management system" sequence="1"/>
-			<menuitem id="home_registration" name="Home_registration" sequence="2" action="action_home_registration" parent="home"/>
+			<menuitem id="home_registration" name="Home registration" sequence="2" action="action_home_registration" parent="home"/>
 	</data>
 </odoo>

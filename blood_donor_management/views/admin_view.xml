@@ -31,9 +31,10 @@
 		</record>
 
 		<record id="action_verify_donor" model="ir.actions.act_window">
-			<field name="name">List of all available Donors</field>
+			<field name="name">List of all available donor1</field>
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">res.partner</field>
+			<field name="domain">[('role','=',1)]</field>
 			<field name="view_mode">tree,form</field>
 			<field name="view_id" ref="tree_view_donor_details"/>
 			
@@ -49,7 +50,6 @@
            			<field name="type1"></field>
             		<field name="name"></field>
             		<field name="contact_person"></field>
-            		<field name="phone"></field>
             		<field name="mobile"></field>
             		<field name="email"></field>
             		<field name="street"></field>
@@ -64,6 +64,7 @@
 			<field name="name">List of all blood banks</field>
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">res.partner</field>
+			<field name="domain">[('role','=',2)]</field>
 			<field name="view_mode">tree,form</field>
 			<field name="view_id" ref="tree_view_blood_bank_details"/>
 			
@@ -95,6 +96,7 @@
 			<field name="name">Registered Camp details</field>
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">res.partner</field>
+			<field name="domain">[('role','=',3)]</field>
 			<field name="view_mode">tree,form</field>
 			<field name="view_id" ref="tree_view_registered_camp_details"/>
 			
@@ -119,6 +121,8 @@
 			<field name="name">List of all donor queries</field>
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">res.partner</field>
+			<!-- <field name="context">{'search_default_role':'4'}</field> -->
+			<field name="domain">[('role','=',4)]</field>
 			<field name="view_mode">tree,form</field>
 			<field name="view_id" ref="tree_view_donor_query_details"/>
 			
@@ -129,6 +133,6 @@
 			<menuitem id="camp_details" name="Registered Camp details" sequence="6" action="action_camp_details" parent="home"/>
 			<menuitem id="donor_query" name="Donor Query" sequence="7" action="action_donor_query" parent="admin_view"/>
 		<menuitem id="camp_admin_view" name="ADMIN at camp" sequence="8" parent="home"/>
-			<menuitem id="update_donor_status" name="Update donor Status" sequence="7" action="action_verify_donor" parent="camp_admin_view"/>
+			<menuitem id="update_donor_status" name="Update donor Status" sequence="9" action="action_verify_donor" parent="camp_admin_view"/>
 	</data>
 </odoo>

@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!--Email template -->
-        <record id="on_update_status" model="mail.template">
+     <!--    Email template  -->
+        <record id="on_update_status_true" model="mail.template">
+            <field name="name">Registration - Send by Email</field>
+            <field name="email_from">${(user.email or '')|safe}</field>
+            <field name="email_to">${object.email}</field>
+            <field name="subject">Congrats ${object.name}</field>
+            <field name="model_id" ref="blood_donor_management.model_res_partner"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[
+            <ul class="o_mail_thread_message_tracking">
+                <h1>Welcome to blood donor management</h1>
+                <li>
+                    Name: <span>${object.name}</span>
+                </li>
+                <p>Now you are eligible to donate blood</p>
+                <p>Your status have been update to true</p>
+                <p>you can view all registered camp & blood bank details</p>
+            </ul>
+            ]]></field>
+        </record>
+    </data>
+    <data>
+        <record id="on_update_status_false" model="mail.template">
             <field name="name">Registration - Send by Email</field>
             <field name="email_from">${(user.email or '')|safe}</field>
             <field name="email_to">${object.email}</field>
@@ -15,9 +36,47 @@
                 <li>
                     Name: <span>${object.name}</span>
                 </li>
-                <p>Now you are eligible to donate blood</p>
-                <p>You can view all blood bank & camp registration details </p>
-       		</ul>
+                <p>Now you are not eligible to donate blood</p>
+                <p>Your status have been updated to false</p>
+            </ul>
+            ]]></field>
+        </record>
+    </data>
+    <data>
+        <record id="query_update_status_" model="mail.template">
+            <field name="name">Registration - Send by Email</field>
+            <field name="email_from">${(user.email or '')|safe}</field>
+            <field name="email_to">${object.email}</field>
+            <field name="subject">Congrats ${object.name}</field>
+            <field name="model_id" ref="blood_donor_management.model_res_partner"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[
+            <ul class="o_mail_thread_message_tracking">
+                <h1>Hello</h1>
+                <li>
+                    Name: <span>${object.name}</span>
+                </li>
+                <p>Your query has been viewed bu admin and action has been processed</p>
+            </ul>
+            ]]></field>
+        </record>
+    </data>
+    <data>
+        <record id="query_update_status_false" model="mail.template">
+            <field name="name">Registration - Send by Email</field>
+            <field name="email_from">${(user.email or '')|safe}</field>
+            <field name="email_to">${object.email}</field>
+            <field name="subject">Congrats ${object.name}</field>
+            <field name="model_id" ref="blood_donor_management.model_res_partner"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[
+            <ul class="o_mail_thread_message_tracking">
+                <h1>Hello</h1>
+                <li>
+                    Name: <span>${object.name}</span>
+                </li>
+                <p>Your query has been submitted and as soon as admin will view it you will be informed</p>
+            </ul>
             ]]></field>
         </record>
     </data>

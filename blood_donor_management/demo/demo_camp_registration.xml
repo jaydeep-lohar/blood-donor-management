@@ -13,7 +13,39 @@
             <field name="street">Opp Nike Showroom</field>
             <field name="street2">Government streets</field>
             <field name="city">Gandhinagar</field>
-            <field name="message">Hello</field>
+            <field name="message">Welcome..to our camp</field>
         </record>
 	</data>
+    <data noupdate="0">
+        <record id="Camp_indigo_red_cross_camp" model="res.partner">
+            <field name="role">3</field>
+            <field name="name">Indigo red-cross Camp</field>
+            <field name="blood_bank_ref" ref='blood_bank_Alpha_trust'></field>
+            <field name="camp_date">2018-02-10</field>
+            <field name="camp_time">11.50</field>
+            <field name="person_name">punit Singh</field>
+            <field name="mobile">9054495887</field>
+            <field name="email">indigo_red-cross@gmail.com</field>
+            <field name="street">Opp Nike Showroom</field>
+            <field name="street2">Government streets</field>
+            <field name="city">Gandhidham</field>
+            <field name="message">Welcome to the blood donor family</field>
+        </record>
+    </data>
+    <data noupdate="0">
+        <record id="Camp_green_lines" model="res.partner">
+            <field name="role">3</field>
+            <field name="name">Om mandal seva</field>
+            <field name="blood_bank_ref" ref='blood_bank_Zebra_trust'></field>
+            <field name="camp_date">2018-02-10</field>
+            <field name="camp_time">11.50</field>
+            <field name="person_name">Vidit Singh</field>
+            <field name="mobile">9054495887</field>
+            <field name="email">green_lines@gmail.com</field>
+            <field name="street">Opp Nike Showroom</field>
+            <field name="street2">Government streets</field>
+            <field name="city">Gandhinagar</field>
+            <field name="message">Hello</field>
+        </record>
+    </data>
 </odoo>

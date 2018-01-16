@@ -2,7 +2,7 @@
 <odoo>
     <data noupdate="0">
     	<record id="donor_dhwani_mehta" model="res.partner">
-            <field name="role">1</field>
+            <field name="role" >1</field>
             <field name="name">Dhwani Mehta</field>
             <field name="blood_group">O+</field>
             <field name="previous_donation_date">2017-9-28</field>
@@ -13,11 +13,57 @@
             <field name="weight">65</field>
             <field name="diastolic">85</field>
             <field name="systolic">170</field>
-            <field name="donor_status">True</field>
+            <field name="donor_status">False</field>
             <field name="street">Home no:-206</field>
             <field name="street2">New C.G Road</field>
             <field name="city">Ahmedabad</field>
+            <field name="mobile">9087654356</field>
+            <field name="gmail">jaydeepl1609@gmail.com</field>
 
 		</record>
 	</data>
+    <data noupdate="0">
+        <record id="donor_deepak_mehta" model="res.partner">
+            <field name="role" >1</field>
+            <field name="name">Deepak Mehta</field>
+            <field name="blood_group">O+</field>
+            <field name="previous_donation_date">2017-9-28</field>
+            <field name="hemoglobin">17</field>
+            <field name="pulse_rate">90</field>
+            <field name="temperature">30</field>
+            <field name="gender">1</field>
+            <field name="weight">65</field>
+            <field name="diastolic">85</field>
+            <field name="systolic">170</field>
+            <field name="donor_status">False</field>
+            <field name="street">Home no:-150</field>
+            <field name="street2">Near AMC Mall</field>
+            <field name="city">Ahmedabad</field>
+            <field name="mobile">9085654356</field>
+            <field name="gmail">jaydeepl1609@gmail.com</field>
+
+        </record>
+    </data>
+    <data noupdate="0">
+        <record id="donor_krupa_mehta" model="res.partner">
+            <field name="role" >1</field>
+            <field name="name">Krupa Mehta</field>
+            <field name="blood_group">O+</field>
+            <field name="previous_donation_date">2017-9-28</field>
+            <field name="hemoglobin">17</field>
+            <field name="pulse_rate">90</field>
+            <field name="temperature">30</field>
+            <field name="gender">2</field>
+            <field name="weight">65</field>
+            <field name="diastolic">85</field>
+            <field name="systolic">170</field>
+            <field name="donor_status">False</field>
+            <field name="street">Home no:-206</field>
+            <field name="street2">Near alpha mall</field>
+            <field name="city">Ahmedabad</field>
+            <field name="mobile">9087094356</field>
+            <field name="gmail">jaydeepl1609@gmail.com</field>
+
+        </record>
+    </data>
 </odoo>
